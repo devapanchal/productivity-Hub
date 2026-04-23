@@ -1,4 +1,4 @@
-// ── STATE ─────────────────────────────────────────────
+// STATE 
 let tasks = [];
 let chart = null;
 
@@ -9,7 +9,7 @@ let focusSecondsLeft = 1500;
 let totalFocusSeconds = 0;
 let sessionsCompleted = 0;
 
-// ── STORAGE ───────────────────────────────────────────
+//  STORAGE 
 function save() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
   localStorage.setItem('focus', JSON.stringify({
@@ -25,7 +25,7 @@ function load() {
   sessionsCompleted = f.sessions || 0;
 }
 
-// ── NAVIGATION ─────────────────────────────────────────
+//  NAVIGATION 
 function initNav() {
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.onclick = () => {
@@ -38,7 +38,7 @@ function initNav() {
   });
 }
 
-// ── TASKS ─────────────────────────────────────────────
+// TASKS 
 function addTask() {
   const input = document.getElementById('task-input');
   const text = input.value.trim();
@@ -118,7 +118,7 @@ document.addEventListener('click', (e) => {
   if (e.target.matches('.task-delete')) deleteTask(id);
 });
 
-// ── CHART ─────────────────────────────────────────────
+// CHART 
 function updateChart(done, pending) {
   const canvas = document.getElementById('task-chart');
   if (!canvas) return;
